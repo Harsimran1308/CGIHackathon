@@ -1,0 +1,28 @@
+.stocks-container{
+    padding: 10px 20px 10px 20px;
+    height: 100%;
+}
+.stock-header-name {
+    font-size: 1rem;
+    color: #121926;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.235;
+    display: flex;
+    align-items: flex-start;
+}
+.stock-list{
+    margin-top: 20px;
+}
+.stock-percentage {
+    display: flex;
+}
+.stock-keyup {
+    background-color: '#b9f6c9';
+}
+.name-inline {
+    display: inline;
+}
+.stock-name-checkbox {
+    padding: 0px 5px 0px 0px !important;
+}
