@@ -26,3 +26,37 @@
 .stock-name-checkbox {
     padding: 0px 5px 0px 0px !important;
 }
+.stock-name{
+    margin: 0 !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    color: #121926 !important;
+    font-family: 'Roboto', sans-serif !important;
+    line-height: 1.75 !important;
+    color: inherit !important;
+}
+
+.stock-rate {
+    margin: 0 !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    color: #121926 !important;
+    font-family: 'Roboto', sans-serif !important;
+    line-height: 1.75 !important;
+    color: inherit !important;
+}
+.stock-percentage {
+    margin: 0 !important;
+    font-size: 0.75rem !important;
+    font-weight: 400 !important;
+    color: #697586 !important;
+    font-family: 'Roboto', sans-serif !important;
+    line-height: 1.57 !important;
+}
+
+.stock-percentage-profit {
+    color: #59D277 !important;
+}
+.stock-percentage-loss{
+    color: #de5937 !important;
+}

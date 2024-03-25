@@ -40,7 +40,7 @@ export default function Stocks() {
                           <Grid item>
                             <div>
                               <Checkbox defaultChecked size="small" className='name-inline stock-name-checkbox'/>
-                              <Typography variant="subtitle1" color="inherit" className='name-inline'>
+                              <Typography variant="subtitle1" color="inherit" className='name-inline stock-name' >
                                 {item.name}
                               </Typography>
                             </div>
@@ -48,7 +48,7 @@ export default function Stocks() {
                           <Grid item>
                             <Grid container alignItems="center" justifyContent="space-between">
                               <Grid item>
-                                <Typography variant="subtitle1" color="inherit">
+                                <Typography variant="subtitle1" color="inherit" className='stock-rate'>
                                   ${item.price}
                                 </Typography>
                               </Grid>
@@ -92,11 +92,11 @@ export default function Stocks() {
                       <Grid item>
                         {
                           item.profit ?
-                            <Typography variant="subtitle2" sx={{ color: '#59D277' }} className='stock-percentage'>
+                            <Typography variant="subtitle2" className='stock-percentage stock-percentage-profit'>
                               {item.percentage}% Profit
                             </Typography>
                             :
-                            <Typography variant="subtitle2" sx={{ color: '#de5937' }} className='stock-percentage'>
+                            <Typography variant="subtitle2" sx={{ color: '#de5937' }} className='stock-percentage stock-percentage-loss'>
                               {item.percentage}% Loss
                             </Typography>
                         }

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import './LineGraph.css'
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
@@ -36,20 +36,20 @@ const LineGraph = () => {
         <Grid item xs={12}>
           <Grid container alignItems="center" justifyContent="space-between">
             <Grid item>
-              <Typography variant="subtitle1" sx={{ color: theme.palette.secondary.dark }}>
+              <Typography variant="subtitle1" sx={{ color: theme.palette.secondary.dark }} className='stock-graph-name'>
                 Tesla
               </Typography>
             </Grid>
             <Grid item>
-              <Typography variant="h4" sx={{ color: theme.palette.grey[800] }}>
-                $1839.00
+              <Typography variant="h4" sx={{ color: theme.palette.grey[800] }} className='rate-graph-text'>
+                $500.00
               </Typography>
             </Grid>
           </Grid>
         </Grid>
         <Grid item xs={12}>
           <Typography variant="subtitle2" sx={{ color: theme.palette.grey[800] }} className='stock-percentage'>
-            10% Profit
+            20% Loss
           </Typography>
         </Grid>
       </Grid>
