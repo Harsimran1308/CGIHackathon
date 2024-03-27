@@ -1,0 +1,39 @@
+.news-container {
+    height: 100%;
+    padding: 20px;
+}
+.news-cards {
+    display: flex;
+    flex-direction: column;
+    /* height: 200px; */
+}
+
+.news-card-details {
+    display: flex;
+    flex-direction: row;
+    /* height: 200px; */
+}
+.skelton-image {
+    height: 100% !important;
+    border-radius: 10px;
+}
+.news-image {
+    width: 150px;
+    height: 150px;
+}
+.news-text{
+    width: 100%;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.news-source{
+    display: flex;
+    flex-direction: row;
+}
+.news-source-name {
+    margin-left: 10px;
+}
+.news-header {
+    margin-top: 10px;
+}

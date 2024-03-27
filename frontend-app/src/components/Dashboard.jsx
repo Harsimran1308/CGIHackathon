@@ -12,6 +12,7 @@ import './Dashboard.css'
 import { useTheme } from '@mui/material/styles';
 import MarketOverview from './MarketOverview';
 import Stocks from './Stocks';
+import NewsSection from './NewsSection';
 
 export default function Dashboard() {
     const theme = useTheme();
@@ -133,6 +134,7 @@ export default function Dashboard() {
                         <tr className='row1-container'>
                             <td rowSpan={2} className='news-tile-container'>
                                 <div className='news-tile'>
+                                    <NewsSection></NewsSection>
                                 </div>
                             </td>
                             <td className='market-overview-container'>
