@@ -1,7 +1,8 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import './NewsSection.css'
 import Skeleton from '@mui/material/Skeleton';
 import { Divider } from '@mui/material';
+import NewsCard from './NewsCard';
 
 let news_loader_cards = []
 for (let index = 0; index < 5; index++) {
@@ -56,9 +57,45 @@ for (let index = 0; index < 5; index++) {
     
 }
 export default function NewsSection() {
+    const [loading, setLoading] = useState(true);
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        // Simulate fetching data from an API
+        const fetchData = async () => {
+          try {
+            const response = await fetch('http://localhost:8080/news/getAll');
+            const jsonData = await response.json();
+            // Simulate some processing time
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            console.log(jsonData)
+            setData(jsonData);
+            setLoading(false);
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+        };
+    
+        fetchData();
+      }, []);
+    if (loading) {
+        // Show loading skeleton while data is being fetched
+        return (
+            <div className="news-container">
+                {news_loader_cards}
+            </div>
+        )
+    }
     return (
         <div className="news-container">
-            {news_loader_cards}
+            {data.map((item, index, data) => (
+                <NewsCard
+                    key={index} 
+                    data={item} 
+                    showDivider={(index + 1 === data.length) ? false : true}
+                />
+            ))}
+            
         </div>
     )
 }

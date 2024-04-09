@@ -18,6 +18,8 @@ import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
 import './signup.css';
+import { Bounce, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const defaultTheme = createTheme();
 const chipLabels = [
@@ -60,13 +62,27 @@ const chipLabels = [
     ]
 
 export default function SignUp() {
+    const notify = () => toast.success("Welcome aboard! Signup Successfull", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: false,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+      });
     const [selectedChips, setSelectedChips] = useState([]);
     const [selectedNewsChips, setSelectedNewsChips] = useState([]);
 
     let navigate = useNavigate(); 
-  const routeChange = () =>{ 
-    let path = `/registration`; 
-    navigate(path);
+  const routeChange = () =>{
+    notify()
+    setTimeout(() => {
+      let path = `/`; 
+      navigate(path);
+    }, 2000);
   }
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -257,6 +273,18 @@ export default function SignUp() {
           </Box>
         </Box>
       </Grid>
+      <ToastContainer 
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable={false}
+        pauseOnHover
+        theme="light"
+      />
     </Grid>
   </ThemeProvider>
   );
